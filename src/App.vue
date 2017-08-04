@@ -1,12 +1,20 @@
 <template>
   <div id="app">
+    <m-header></m-header>
+    <tab></tab>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import MHeader from '@/components/m-header/m-header'
+import Tab from '@/components/tab/tab'
 export default {
   name: 'app',
+  components: {
+    'm-header': MHeader,
+    'tab': Tab
+  }
 }
 </script>
 
@@ -17,6 +25,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
