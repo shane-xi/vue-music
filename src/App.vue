@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <m-header></m-header>
-    <tab></tab>
-    <router-view></router-view>
+    <tab class="tab"></tab>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>  
   </div>
 </template>
 
@@ -25,5 +27,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+.tab {
+	flex-shrink: 0
 }
 </style>
