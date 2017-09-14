@@ -4,11 +4,16 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import axios from 'axios'
+import lazyload from 'vue-lazyload'
 
 import 'common/stylus/index.styl'
 Vue.config.productionTip = false
 Vue.prototype.$ajax = axios
 axios.defaults.baseURL = '/api'
+
+Vue.use(lazyload, {
+	loading: require('common/image/default.png')
+})
 
 /* eslint-disable no-new */
 new Vue({

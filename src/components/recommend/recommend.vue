@@ -1,5 +1,5 @@
 <template>
-	<div class="recommend" ref="recommend">
+	<div class="recommend" ref="recommend" >
 		<scroll ref="scroll" :data="songList" :click="click">
 			<div>
 				<slide :slides="slides"></slide>
@@ -9,7 +9,7 @@
 					<div class="rem-ul">
 						<a v-for="(item, index) in songList" :key="index" class="rem-item" href="">
               <div class="img-wrap">
-							  <img @load="loadImage" :src="item.picUrl" class="img" />
+							  <img @load="loadImage" v-lazy="item.picUrl" class="img" />
 							</div>
               <span class="play-count">{{ formatPlayNum(item.playCount) }}</span>
 							<p v-html="item.name" class="text"></p>
@@ -19,7 +19,7 @@
 					<div class="rem-ul">
 						<a v-for="(item, index) in songList" :key="index" class="rem-item">
 							<div class="img-wrap">
-							  <img @load="loadImage" :src="item.picUrl" class="img" />
+							  <img @load="loadImage" v-lazy="item.picUrl" class="img" />
 							</div>
 							<span class="play-count">{{ formatPlayNum(item.playCount) }}</span>
 							<p v-html="item.name" class="text"></p>
@@ -29,7 +29,7 @@
 					<div class="rem-ul">
 						<a v-for="(item, index) in songList" :key="index" class="rem-item">
 							<div class="img-wrap">
-							  <img @load="loadImage" :src="item.picUrl" class="img" />
+							  <img @load="loadImage" v-lazy="item.picUrl" class="img" />
 							</div>
 							<span class="play-count">{{ formatPlayNum(item.playCount) }}</span>
 							<p v-html="item.name" class="text"></p>
